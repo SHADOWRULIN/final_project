@@ -1,8 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_design/log_out.dart';
+import 'package:flutter_app_design/profile_screen.dart';
 
-class ProfileScreen2 extends StatelessWidget {
+class ProfileScreen2 extends StatefulWidget {
   const ProfileScreen2({super.key});
 
+  @override
+  State<ProfileScreen2> createState() => _ProfileScreen2State();
+}
+
+class _ProfileScreen2State extends State<ProfileScreen2> {
+  void switchToLogOut() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const LogOut()
+      )
+    );
+  }
+  void switchToProfileScreenPage() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const ProfileScreen()
+      )
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -82,7 +101,7 @@ class ProfileScreen2 extends StatelessWidget {
                             backgroundColor: const Color(0xffF9F5E9),
                             elevation: 0
                           ),
-                          onPressed: (){}, 
+                          onPressed: switchToProfileScreenPage, 
                           icon: const Icon(Icons.favorite_outline, color: Colors.black,), 
                           label: const Text(
                             "   Favorites                          >",
@@ -124,7 +143,7 @@ class ProfileScreen2 extends StatelessWidget {
                             backgroundColor: const Color(0xffF9F5E9),
                             elevation: 0
                           ),
-                          onPressed: (){}, 
+                          onPressed: switchToLogOut, 
                           icon: const Icon(Icons.settings_power_outlined, color: Colors.black,), 
                           label: const Text(
                             "   Log out                            >",
@@ -146,7 +165,7 @@ class ProfileScreen2 extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       GestureDetector(
-                        onTap: (){},
+                        onTap: switchToProfileScreenPage,
                         child: const Icon(
                           Icons.favorite_outline,
                           size: 30,

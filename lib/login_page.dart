@@ -1,8 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_design/create_acc.dart';
+import 'package:flutter_app_design/profile_screen.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  void switchToCreateAccPage() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const CreateAcc()
+      )
+    );
+  }
+  void switchToProfileScreenPage() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const ProfileScreen()
+      )
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -146,7 +165,7 @@ class LoginPage extends StatelessWidget {
                             style: ElevatedButton.styleFrom(
                               backgroundColor: const Color(0xffF4C331)
                             ),
-                            onPressed: (){}, 
+                            onPressed: switchToProfileScreenPage, 
                             child: const Text(
                               "Log In",
                               style: TextStyle(
@@ -172,7 +191,7 @@ class LoginPage extends StatelessWidget {
                           height: 135,
                         ),
                         GestureDetector(
-                          onTap: () {},
+                          onTap: switchToCreateAccPage,
                           child: const Text(
                             "Don't have an account?",
                             style: TextStyle(

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_design/login_page.dart';
+import 'package:flutter_app_design/profile_screen.dart';
 
 class CreateAcc extends StatefulWidget {
   const CreateAcc({super.key});
@@ -8,6 +10,20 @@ class CreateAcc extends StatefulWidget {
 }
 
 class _TestState extends State<CreateAcc> {
+
+  void switchToProfileScreenPage() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const ProfileScreen()
+      )
+    );
+  }
+
+  void switchToLoginPage() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const LoginPage()
+      )
+    );
+  }
 
   bool _isChecked = false;
 
@@ -229,7 +245,7 @@ class _TestState extends State<CreateAcc> {
                             style: ElevatedButton.styleFrom(
                               backgroundColor: const Color(0xffF4C331)
                             ),
-                            onPressed: (){}, 
+                            onPressed: switchToProfileScreenPage, 
                             child: const Text(
                               "Create Account",
                               style: TextStyle(
@@ -255,7 +271,7 @@ class _TestState extends State<CreateAcc> {
                           height: 20,
                         ),
                         GestureDetector(
-                          onTap: () {},
+                          onTap: switchToLoginPage,
                           child: const Text(
                             "Back to login page",
                             style: TextStyle(

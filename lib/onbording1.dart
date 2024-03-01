@@ -1,8 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_design/onbording2.dart';
 
-class Onbording1 extends StatelessWidget {
+class Onbording1 extends StatefulWidget {
   const Onbording1({super.key});
 
+  @override
+  State<Onbording1> createState() => _Onbording1State();
+}
+
+class _Onbording1State extends State<Onbording1> {
+  void switchToOnboarding2() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const Onbording2()
+      )
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,7 +66,7 @@ class Onbording1 extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xff374951)
                       ),
-                      onPressed: (){}, 
+                      onPressed: switchToOnboarding2, 
                       child: const Text(
                         "Lets's get started",
                         style: TextStyle(

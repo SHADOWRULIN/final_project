@@ -1,8 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_design/profile_screen2.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 
+  @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  void switchToProfileScreenPage2() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const ProfileScreen2()
+      )
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -323,7 +335,7 @@ class ProfileScreen extends StatelessWidget {
                             ),
                           ),
                           GestureDetector(
-                            onTap: (){},
+                            onTap: switchToProfileScreenPage2,
                             child: const Icon(
                               Icons.person_3_outlined,
                               size: 30,

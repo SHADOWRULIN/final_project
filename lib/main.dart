@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_design/ok.dart';
+import 'package:flutter_app_design/splash_screen.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Test(),
+      home: const SplashScreen(),
     );
   }
 }

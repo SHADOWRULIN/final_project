@@ -1,8 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_design/create_acc.dart';
+import 'package:flutter_app_design/login_page.dart';
 
-class Onbording2 extends StatelessWidget {
+class Onbording2 extends StatefulWidget {
   const Onbording2({super.key});
 
+  @override
+  State<Onbording2> createState() => _Onbording2State();
+}
+
+class _Onbording2State extends State<Onbording2> {
+  void switchToLoginPage() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const LoginPage()
+      )
+    );
+  }
+  void switchToCreateAccPage() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const CreateAcc()
+      )
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,7 +66,7 @@ class Onbording2 extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xff374951)
                       ),
-                      onPressed: (){}, 
+                      onPressed: switchToLoginPage, 
                       child: const Text(
                         "Log In",
                         style: TextStyle(
@@ -67,7 +86,7 @@ class Onbording2 extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xff374951)
                       ),
-                      onPressed: (){}, 
+                      onPressed: switchToCreateAccPage, 
                       child: const Text(
                         "Create Account",
                         style: TextStyle(

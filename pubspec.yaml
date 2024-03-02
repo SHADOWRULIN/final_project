@@ -82,6 +82,10 @@ flutter:
     - assets/ProfileScreen/movie(2).png
     - assets/ProfileScreen/movie(3).png
     - assets/ProfileScreen/movie(4).png
+    - assets/Home/1.png
+    - assets/Home/2.png
+    - assets/Home/3.png
+    - assets/Home/4.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

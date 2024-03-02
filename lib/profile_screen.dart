@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_design/home.dart';
 import 'package:flutter_app_design/profile_screen2.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -12,6 +13,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
   void switchToProfileScreenPage2() {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => const ProfileScreen2()
+      )
+    );
+  }
+  void switchToHome() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const Home()
       )
     );
   }
@@ -328,7 +335,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             ),
                           ),
                           GestureDetector(
-                            onTap: (){},
+                            onTap: switchToHome,
                             child: const Icon(
                               Icons.home_outlined,
                               size: 30,

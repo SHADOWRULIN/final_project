@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_design/home.dart';
 import 'package:flutter_app_design/log_out.dart';
 import 'package:flutter_app_design/profile_screen.dart';
 
@@ -13,6 +14,12 @@ class _ProfileScreen2State extends State<ProfileScreen2> {
   void switchToLogOut() {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => const LogOut()
+      )
+    );
+  }
+  void switchToHome() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const Home()
       )
     );
   }
@@ -172,7 +179,7 @@ class _ProfileScreen2State extends State<ProfileScreen2> {
                         ),
                       ),
                       GestureDetector(
-                        onTap: (){},
+                        onTap: switchToHome,
                         child: const Icon(
                           Icons.home_outlined,
                           size: 30,
